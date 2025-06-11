@@ -14,20 +14,20 @@ const Menu = ({ isActive }: IProps) => {
 
   return (
     <div
-      className={`fixed top-0 left-0 bg-white overflow-hidden w-full z-50 transition-all duration-[600ms] ${
-        isActive ? "" : "delay-100"
-      }`}
-      style={{
-        maxWidth: isActive ? "100vw" : "0",
-      }}
+     className={`fixed top-0 left-0 bg-white w-full h-full overflow-y-auto z-50 transition-all duration-[600ms] ${
+       isActive ? "" : "delay-100"
+     }`}
+     style={{
+       maxWidth: isActive ? "100vw" : "0",
+     }}
     >
-      <div className="h-screen w-full px-[65px] py-[100px] tracking-[0.25em] flex flex-col items-center">
+      <div className="w-full px-[65px] py-[100px] tracking-[0.25em] flex flex-col items-center">
         <img
           className="w-[420px] mb-[110px] max-md:mb-[55px]"
           src={Logo}
           alt=""
         />
-        <div className="flex flex-col gap-[40px] items-center font-ezra-medium text-[44px] max-md:text-[30px]">
+        <div className="flex flex-col gap-[30px] items-center font-ezra-medium text-[20px] max-md:text-[15px]">
           <NavLink
             to="/home"
             className={`${
@@ -68,14 +68,14 @@ const Menu = ({ isActive }: IProps) => {
           >
             PERFORMANCE THERAPY
           </NavLink>
-          <NavLink
+          {/* <NavLink
             to="/#"
             className={`${
               isActive ? "" : "-translate-x-56"
             } transition-all duration-300 delay-[350ms]`}
           >
             CONTACT
-          </NavLink>
+          </NavLink> */}
           <NavLink
             to="/about-us"
             className={`${

@@ -168,27 +168,40 @@ const HostEvent: React.FC = () => {
 
         {/* Booking CTA */}
         <motion.section variants={fadeInUp} className="py-16 px-8 text-center">
-          <motion.h2 className="mb-6 text-3xl font-neue-bold text-gray-900">Ready to Elevate Your Next Event?</motion.h2>
+          <motion.h2 className="mb-6 text-3xl font-neue-bold text-gray-900">
+            Ready to Elevate Your Next Event?
+          </motion.h2>
           <motion.p className="mx-auto mb-8 max-w-lg text-lg font-neue-medium">
             Let us help you design an event that feels as good as it looks.
           </motion.p>
+                  
           <motion.div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             {[
               { label: 'Call to Book', color: 'blue' },
               { label: 'Schedule a Tour', color: 'green' },
               { label: 'Inquire About Packages', color: 'pink' },
-            ].map((btn, i) => (
-              <motion.button
-                key={i}
-                className={`rounded-lg px-8 py-4 text-lg font-neue-bold text-white shadow-lg bg-${btn.color}-600`}
-                whileHover={{ scale: 1.1, rotate: 1 }}
-                transition={{ type: 'spring', stiffness: 200 }}
-              >
-                {btn.label}
-              </motion.button>
-            ))}
+            ].map((btn, i) => {
+              // Use a manual mapping to ensure Tailwind recognizes the classes
+              const colorClassMap: Record<string, string> = {
+                blue: 'bg-blue-600',
+                green: 'bg-green-600',
+                pink: 'bg-pink-600',
+              };
+            
+              return (
+                <motion.button
+                  key={i}
+                  className={`rounded-lg px-8 py-4 text-lg font-neue-bold text-white shadow-lg ${colorClassMap[btn.color]}`}
+                  whileHover={{ scale: 1.1, rotate: 1 }}
+                  transition={{ type: 'spring', stiffness: 200 }}
+                >
+                  {btn.label}
+                </motion.button>
+              );
+            })}
           </motion.div>
         </motion.section>
+
 
         {/* Testimonials */}
         <motion.section variants={fadeInUp} className="bg-gray-100 py-16 px-8 text-center">
