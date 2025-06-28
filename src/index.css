@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Neue Regular";
+  src: url("./assets/fonts/NeueMontreal/NeueMontreal-Regular.otf");
+}
+
+@font-face {
+  font-family: "Neue Bold";
+  src: url("./assets/fonts/NeueMontreal/NeueMontreal-Bold.otf");
+}
+
+@font-face {
+  font-family: "Neue Medium";
+  src: url("./assets/fonts/NeueMontreal/NeueMontreal-Medium.otf");
+}
+
+@font-face {
+  font-family: "Ghania";
+  src: url("./assets/fonts/Ghania/Ghania.ttf");
+}
+
+@font-face {
+  font-family: "BROWNISH";
+  src: url("./assets/fonts/BROWNISH/Brownish.otf");
+}
+
+@font-face {
+  font-family: "Ezra Medium";
+  src: url("./assets/fonts/Ezra/Ezra-Medium.otf");
+}
