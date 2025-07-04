@@ -29,7 +29,7 @@ const Menu = ({ isActive }: IProps) => {
         />
         <div className="flex flex-col gap-[30px] items-center font-ezra-medium text-[20px] max-md:text-[15px]">
           <NavLink
-            to="/home"
+            to="/"
             className={`${
               isActive ? "" : "-translate-x-56"
             } transition-all duration-300 delay-[100ms]`}

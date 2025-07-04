@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const mockData = [
     {
       title: "CHEMICAL / COLOR",
@@ -70,9 +72,11 @@ const mockData = [
         <div className="custom-product-scrollbar h-full pr-[50px] max-md:pr-[0]">
         <div className="flex flex-col gap-[15px] items-center">
         <div className="border-b border-solid border-black w-[80px]"></div>
+        <Link to="/book-appointment" style={{ textDecoration: "none" }}>
         <button className="outline-none rounded-full bg-black bg-opacity-60 hover:bg-opacity-100 hover:text-white transition-all duration-300 ease-linear px-[91px] py-[14px] max-md:px-[70px] max-md:text-[11px] font-neue-regular tracking-[0.25em]">
         BOOK APPOINTMENT
         </button>
+        </Link>
         <div className="border-b border-solid border-black w-[80px]"></div>
       </div>
           {mockData.map((item, i) => (
@@ -110,9 +114,11 @@ const mockData = [
         </div>
         <div className="flex flex-col gap-[15px] items-center">
         <div className="border-b border-solid border-black w-[80px]"></div>
+        <Link to="/book-appointment" style={{ textDecoration: "none" }}>
         <button className="outline-none rounded-full bg-black bg-opacity-60 hover:bg-opacity-100 hover:text-white transition-all duration-300 ease-linear px-[91px] py-[14px] max-md:px-[70px] max-md:text-[11px] font-neue-regular tracking-[0.25em]">
         BOOK APPOINTMENT
         </button>
+        </Link>
         <div className="border-b border-solid border-black w-[80px]"></div>
       </div>
       </div>

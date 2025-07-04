@@ -10,7 +10,7 @@ import BookAppointment from "./pages/BookAppointment";
 
 const router = createBrowserRouter([
   {
-    path: "/home",
+    path: "/",
     element: <Home />,
   },
   {

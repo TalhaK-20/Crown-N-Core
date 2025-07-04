@@ -90,7 +90,7 @@ const Header = () => {
           <div className="flex flex-col gap-[21px] w-full absolute top-[70px] max-md:top-[15px] max-md:left-[10px] left-0 items-center">
             <div className="w-[53%] max-md:w-full max-md:h-[60px] flex items-center">
               <Reveal bgColor="transparent" className="w-full">
-                <NavLink to="/home">
+                <NavLink to="/">
                   <img
                     className={`w-full object-contain ${
                       isScrolled

@@ -10,6 +10,7 @@ import Crowns from "../components/Crowns";
 import { useEffect, useState } from "react";
 import FAQ from "../components/FAQ";
 import Reveal from "../components/Reveal";
+import { Link } from "react-router-dom";
 
 const faqData = [
   {
@@ -185,11 +186,13 @@ const Home = () => {
           <div className="absolute max-md:static bottom-[61px] max-md:bottom-[20px] flex flex-col gap-[15px] max-md:gap-[10px] w-full justify-center items-center">
             <Vector color="white" />
             <button className="outline-none bg-white bg-opacity-60 rounded-[33px] max-md:min-w-full  px-[13%] py-[20px] max-md:py-[10px] hover:bg-opacity-100 hover:text-black transition-all duration-300 ease-linear">
+              <Link to="/book-appointment" style={{ textDecoration: "none" }}>
               <Reveal bgColor="transparent">
                 <p className="font-neue-regular tracking-[0.25em] max-md:text-[12px] h-fit">
                   BOOK APPOINTMENT
                 </p>
               </Reveal>
+              </Link>
             </button>
             <Vector color="white" />
           </div>

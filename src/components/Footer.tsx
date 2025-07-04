@@ -16,7 +16,7 @@ const Footer = () => {
           <Reveal bgColor="transparent">WELLNESS SPA + SALON</Reveal>
         </p>
         <p>
-          <Reveal bgColor="transparent">WELLNESS@CROWNANDCORE.COM</Reveal>
+          <Reveal bgColor="transparent">Info@crownandcore.com</Reveal>
         </p>
       </div>
       <div className="flex justify-center items-center">
@@ -76,7 +76,7 @@ const Footer = () => {
           </Reveal>
         </div>
         <p>
-          <Reveal bgColor="transparent">425.XXX.XXX</Reveal>
+          <Reveal bgColor="transparent">Lethia@crownandcore.com</Reveal>
         </p>
       </div>
     </div>
