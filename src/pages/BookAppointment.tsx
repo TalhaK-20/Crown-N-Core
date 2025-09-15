@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Calendar, Clock, User, Phone, Mail, MapPin, CreditCard, Check, ChevronDown, MessageCircle, ExternalLink } from 'lucide-react';
+import { Calendar, Clock, User, Phone, Mail, CreditCard, Check, ChevronDown, MessageCircle, ExternalLink } from 'lucide-react';
 
 type Service = {
   title: string;
@@ -54,7 +54,7 @@ type FormData = {
 const BookingPage = () => {
   const [currentStep, setCurrentStep] = useState<number>(1);
   const [isVisible, setIsVisible] = useState<boolean>(false);
-  const [showSquareWidget, setShowSquareWidget] = useState<boolean>(false);
+  const [showSquareWidget] = useState<boolean>(false);
   const [formData, setFormData] = useState<FormData>({
     service: '',
     date: '',
@@ -140,9 +140,9 @@ Please confirm this booking appointment. Thank you! ✨`;
     window.open(squareUrl, '_blank');
   };
 
-  const handleSquareWidgetBooking = () => {
-    setShowSquareWidget(true);
-  };
+  // const handleSquareWidgetBooking = () => {
+  //   setShowSquareWidget(true);
+  // };
 
   const handleSubmit = () => {
     if (formData.paymentMethod === 'square') {
