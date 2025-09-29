@@ -59,7 +59,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="flex justify-between font-ezra-medium tracking-[0.25em] max-md:flex-col max-md:gap-[30px] relative">
-        <p className="max-w-[600px] max-lg:text-[10px]">
+        <p className="max-w-[600px] max-lg:text-[18px]">
           <Reveal bgColor="transparent">
           1105 Bellevue Way NE #A7, Bellevue WA 98004
           </Reveal>
@@ -75,7 +75,7 @@ const Footer = () => {
             <Tiktok />
           </Reveal>
         </div>
-        <p>
+        <p className="max-w-[600px] max-lg:text-[13px]">
           <Reveal bgColor="transparent">info@crownandcore.com</Reveal>
         </p>
       </div>
