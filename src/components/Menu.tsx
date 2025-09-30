@@ -8,18 +8,17 @@ interface IProps {
 
 const Menu = ({ isActive }: IProps) => {
   useEffect(() => {
-    // Scroll to the top when the component mounts
     window.scrollTo(0, 0);
   }, []);
 
   return (
     <div
-     className={`fixed top-0 left-0 bg-white w-full h-full overflow-y-auto z-50 transition-all duration-[600ms] ${
-       isActive ? "" : "delay-100"
-     }`}
-     style={{
-       maxWidth: isActive ? "100vw" : "0",
-     }}
+      className={`fixed top-0 left-0 bg-white w-full h-full overflow-y-auto z-50 transition-all duration-[600ms] ${
+        isActive ? "" : "delay-100"
+      }`}
+      style={{
+        maxWidth: isActive ? "100vw" : "0",
+      }}
     >
       <div className="w-full px-[65px] py-[100px] tracking-[0.25em] flex flex-col items-center">
         <img
@@ -27,12 +26,13 @@ const Menu = ({ isActive }: IProps) => {
           src={Logo}
           alt=""
         />
-        <div className="flex flex-col gap-[30px] items-center font-ezra-medium text-[20px] max-md:text-[15px]">
+        {/* Add flex centering to the nav container */}
+        <div className="flex flex-col gap-[30px] items-center justify-center font-ezra-medium text-[20px] max-md:text-[15px] w-full">
           <NavLink
             to="/"
             className={`${
               isActive ? "" : "-translate-x-56"
-            } transition-all duration-300 delay-[100ms]`}
+            } transition-all duration-300 delay-[100ms] text-center w-full flex justify-center`}
           >
             <p>HOME</p>
           </NavLink>
@@ -40,7 +40,7 @@ const Menu = ({ isActive }: IProps) => {
             to="/wellness"
             className={`${
               isActive ? "" : "-translate-x-56"
-            } transition-all duration-300 delay-[150ms]`}
+            } transition-all duration-300 delay-[150ms] text-center w-full flex justify-center`}
           >
             WELLNESS
           </NavLink>
@@ -48,7 +48,7 @@ const Menu = ({ isActive }: IProps) => {
             to="/spa"
             className={`${
               isActive ? "" : "-translate-x-56"
-            } transition-all duration-300 delay-[200ms]`}
+            } transition-all duration-300 delay-[200ms] text-center w-full flex justify-center`}
           >
             SPA
           </NavLink>
@@ -56,7 +56,7 @@ const Menu = ({ isActive }: IProps) => {
             to="/hair"
             className={`${
               isActive ? "" : "-translate-x-56"
-            } transition-all duration-300 delay-[250ms]`}
+            } transition-all duration-300 delay-[250ms] text-center w-full flex justify-center`}
           >
             HAIR
           </NavLink>
@@ -64,23 +64,15 @@ const Menu = ({ isActive }: IProps) => {
             to="/performance-therapy"
             className={`${
               isActive ? "" : "-translate-x-56"
-            } transition-all duration-300 delay-[300ms]`}
+            } transition-all duration-300 delay-[300ms] text-center w-full flex justify-center`}
           >
             PERFORMANCE THERAPY
           </NavLink>
-          {/* <NavLink
-            to="/#"
-            className={`${
-              isActive ? "" : "-translate-x-56"
-            } transition-all duration-300 delay-[350ms]`}
-          >
-            CONTACT
-          </NavLink> */}
           <NavLink
             to="/about-us"
             className={`${
               isActive ? "" : "-translate-x-56"
-            } transition-all duration-300 delay-[400ms]`}
+            } transition-all duration-300 delay-[400ms] text-center w-full flex justify-center`}
           >
             ABOUT
           </NavLink>

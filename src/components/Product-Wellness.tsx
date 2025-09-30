@@ -13,14 +13,12 @@ const mockData = [
       "A healing therapy, also known as color light therapy, that uses color specific light wavelengths to restore balance, improve mood, and support physical and emotional well-being. Potential benefits include skin health, pain relief, decreased swelling and inflammation, accelerated healing, decreased muscle tension, improved circulation, regulated mood, detoxification, and improved sleep",
     price: 120,
   },
-
   {
     title: "WELLNESS CONSULTATION",
     description:
       "A personalized consultation with our licensed and certified nurse practitioner, focused on overall wellness or managing and preventing chronic conditions through tailored lifestyle and health strategies",
     price: 200,
   },
-
   {
     title: "CRYOTHERAPY",
     description:
@@ -51,7 +49,6 @@ const mockData = [
       " A gentle massage technique that encourages lymph flow, detoxifies the body, and reduces swelling. We utilize your choice of Endermologie® or the Boa Max 2® to deliver an anti-aging massage that invigorates and relaxes, featuring specialized algorithms for lymphatic drainage, sports massage, slimming, and cellulite. ",
     price: 150,
   },
-
   {
     title: "PROTIEN RECOVERY",
     description:
@@ -78,41 +75,36 @@ const Divider = () => {
 
 const Product_Wellness = () => {
   return (
-    
-    <div className="bg-black pt-[140px] pl-[90px] pr-[40px] max-md:px-[20px] text-white h-fit">
-      <div className="custom-product-scrollbar h-full pr-[50px] max-md:pr-[0]">
-
-      <div className="flex flex-col gap-[15px] items-center">
-        <div className="border-b border-solid border-black w-[80px]"></div>
-        <Link to="/book-appointment" style={{ textDecoration: "none" }}>
-        <button className="outline-none rounded-full bg-black bg-opacity-60 hover:bg-opacity-100 hover:text-white transition-all duration-300 ease-linear px-[91px] py-[14px] max-md:px-[70px] max-md:text-[11px] font-neue-regular tracking-[0.25em]">
-        BOOK APPOINTMENT
-        </button>
-        </Link>
-        <div className="border-b border-solid border-black w-[80px]"></div>
-      </div>
+    <div className="bg-black pt-[80px] md:pt-[140px] px-5 md:pl-[90px] md:pr-[40px] text-white h-fit overflow-hidden">
+      <div className="custom-product-scrollbar h-full pr-0 md:pr-[50px]">
+        <div className="flex flex-col gap-[15px] items-center mb-8 md:mb-0">
+          <div className="border-b border-solid border-black w-[80px]"></div>
+          <Link to="/book-appointment" style={{ textDecoration: "none" }}>
+            <button className="outline-none rounded-full bg-black bg-opacity-60 hover:bg-opacity-100 hover:text-white transition-all duration-300 ease-linear px-[70px] md:px-[91px] py-[14px] text-[11px] md:text-[14px] font-neue-regular tracking-[0.25em]">
+              BOOK APPOINTMENT
+            </button>
+          </Link>
+          <div className="border-b border-solid border-black w-[80px]"></div>
+        </div>
 
         {mockData.map((item, i) => (
-          <>
-            <div
-              key={i}
-              className="flex justify-between max-md:flex-col max-md:gap-[20px]"
-            >
-              <div className="flex-[1.2]">
-                <p className="font-ezra-medium text-[14px] tracking-[0.25em]">
+          <div key={i}>
+            <div className="flex flex-col md:flex-row justify-between gap-4 md:gap-8">
+              <div className="flex-shrink-0 md:flex-[1.2]">
+                <p className="font-ezra-medium text-[12px] md:text-[14px] tracking-[0.25em]">
                   {item.title}
                 </p>
               </div>
-              <div id="width-issue" className="w-[580px]">
-                <p className="font-neue-regular text-[14px] leading-[32px] tracking-[0.1em]">
+              <div className="flex-1 md:w-[580px] md:flex-none overflow-hidden">
+                <p className="font-neue-regular text-[12px] md:text-[14px] leading-[28px] md:leading-[32px] tracking-[0.1em] break-words">
                   {item.description}
                 </p>
               </div>
-              <div className="flex gap-[32px] items-center flex-[1.2] md:justify-end">
+              <div className="flex gap-[32px] items-center md:flex-[1.2] md:justify-end">
                 <p className="font-neue-bold text-[14px] tracking-[0.25em]">
-                  ${item.price}
-                </p>{" "}
-                <div className="h-[35px] border-l-2 border-white border-solid"></div>{" "}
+                  {/* ${item.price} */}
+                </p>
+                {/* <div className="h-[35px] border-l-2 border-white border-solid"></div> */}
                 <button className="outline-none"></button>
               </div>
             </div>
@@ -121,21 +113,20 @@ const Product_Wellness = () => {
             ) : (
               <div className="pb-[40px]"></div>
             )}
-          </>
+          </div>
         ))}
       </div>
-      <div className="flex flex-col gap-[15px] items-center">
+      
+      <div className="flex flex-col gap-[15px] items-center pb-8 md:pb-12">
         <div className="border-b border-solid border-black w-[80px]"></div>
         <Link to="/book-appointment" style={{ textDecoration: "none" }}>
-        <button className="outline-none rounded-full bg-black bg-opacity-60 hover:bg-opacity-100 hover:text-white transition-all duration-300 ease-linear px-[91px] py-[14px] max-md:px-[70px] max-md:text-[11px] font-neue-regular tracking-[0.25em]">
-        BOOK APPOINTMENT
-        </button>
+          <button className="outline-none rounded-full bg-black bg-opacity-60 hover:bg-opacity-100 hover:text-white transition-all duration-300 ease-linear px-[70px] md:px-[91px] py-[14px] text-[11px] md:text-[14px] font-neue-regular tracking-[0.25em]">
+            BOOK APPOINTMENT
+          </button>
         </Link>
         <div className="border-b border-solid border-black w-[80px]"></div>
       </div>
     </div>
   );
-  
 };
-
 export default Product_Wellness;

@@ -29,7 +29,7 @@ const faqData = [
   {
     question: "What is your cancellation policy?",
     answer:
-      "We require at least 24 hours’ notice for cancellations or rescheduling of appointments. Cancellations made within 24 hours will incur a [insert fee] cancellation fee.",
+      "We require at least 24 hours' notice for cancellations or rescheduling of appointments. Cancellations made within 24 hours will incur a [insert fee] cancellation fee.",
   },
   {
     question: "What is Hyperbaric Therapy, and what are its benefits?",
@@ -91,10 +91,12 @@ const Divider = () => {
 const AboutUs = () => {
   return (
     <MainLayout>
-      <div className="flex bg-white px-[40px] appear overflow-hidden">
-        <div className="flex transitionFromLeft">
+      {/* Hero Section */}
+      <div className="flex flex-col lg:flex-row bg-white px-5 md:px-10 lg:px-10 appear overflow-hidden">
+        <div className="flex flex-col lg:flex-row transitionFromLeft w-full lg:w-auto">
+          {/* Vertical Text - Hidden on mobile */}
           <div
-            className="flex gap-[120px] justify-between rotate-180 font-ezra-medium text-[12px] leading-[25px] tracking-[0.25em]"
+            className="hidden lg:flex gap-8 xl:gap-[120px] justify-between rotate-180 font-ezra-medium text-[10px] xl:text-[12px] leading-[25px] tracking-[0.25em]"
             style={{
               writingMode: "vertical-rl",
             }}
@@ -103,7 +105,9 @@ const AboutUs = () => {
             <p>REVITALIZE</p>
             <p>REPLENISH</p>
           </div>
-          <div className="flex flex-col justify-center gap-[40px] font-neue-regular text-[14px] px-[143px] leading-[32px] tracking-[0]">
+          
+          {/* Text Content */}
+          <div className="flex flex-col justify-center gap-6 md:gap-8 lg:gap-10 font-neue-regular text-sm md:text-base px-0 lg:px-12 xl:px-[143px] leading-relaxed lg:leading-[32px] tracking-[0] py-8 lg:py-0">
             <p>
               Nestled in the heart of Bellevue, Washington, Crown and Core
               Wellness Spa and Salon is more than just a sanctuary for beauty
@@ -123,28 +127,26 @@ const AboutUs = () => {
             </p>
           </div>
         </div>
-        <div className="flex gap-[85px] transitionFromRight">
-          <div>
-            <img className="min-w-[400px]" src={fullbodySerenity} alt="" />
+        
+        {/* Image and Title */}
+        <div className="flex flex-col-reverse lg:flex-row gap-8 lg:gap-[85px] transitionFromRight mt-8 lg:mt-0">
+          <div className="w-full lg:w-auto">
+            <img className="w-full lg:min-w-[300px] xl:min-w-[400px] object-cover" src={fullbodySerenity} alt="" />
           </div>
-          <div>
-            <p
-              className="font-ghania text-[110px] rotate-180 leading-[110px]"
-              style={{
-                writingMode: "vertical-rl",
-              }}
-            >
+          <div className="flex justify-center lg:justify-start">
+            <p className="font-ghania text-6xl md:text-8xl lg:text-[110px] lg:rotate-180 leading-tight lg:leading-[110px] lg:[writing-mode:vertical-rl]">
               ABOUT US
             </p>
           </div>
         </div>
       </div>
 
-      <div className="mt-[160px] bg-white flex gap-[75px] appear overflow-hidden">
-        <div className="transitionFromLeft">
-          <img className="min-w-[55.2vw]" src={femaleOcean} alt="" />
+      {/* Second Section */}
+      <div className="mt-16 md:mt-24 lg:mt-[160px] bg-white flex flex-col lg:flex-row gap-8 md:gap-12 lg:gap-[75px] appear overflow-hidden px-5 md:px-10 lg:px-0">
+        <div className="transitionFromLeft w-full lg:w-auto">
+          <img className="w-full lg:min-w-[55.2vw] object-cover" src={femaleOcean} alt="" />
         </div>
-        <div className="flex flex-col justify-center gap-[40px] font-neue-regular text-[14px] leading-[32px] pr-[170px] tracking-[0] transitionFromRight">
+        <div className="flex flex-col justify-center gap-6 md:gap-8 lg:gap-10 font-neue-regular text-sm md:text-base leading-relaxed lg:leading-[32px] pr-0 lg:pr-20 xl:pr-[170px] tracking-[0] transitionFromRight pb-8 lg:pb-0">
           <p>
             We pride ourselves on creating an atmosphere of tranquility and
             elegance, where every detail—from the warm ambiance to the
@@ -173,22 +175,31 @@ const AboutUs = () => {
         </div>
       </div>
 
-      <div className="mt-[122px] text-center">
-        <p className="font-ghania text-[130px]">VISION OF LIFE</p>
+      {/* Vision Section */}
+      <div className="mt-16 md:mt-20 lg:mt-[122px] text-center px-5">
+        <p className="font-ghania text-5xl md:text-7xl lg:text-9xl xl:text-[130px] leading-tight">
+          VISION OF LIFE
+        </p>
       </div>
+      
       <Crowns />
-      <div className="px-[84px] bg-black text-white py-[80px] max-md:px-[22px]">
-        <h3 className="mb-[42px] text-[24px] font-ezra-medium">FAQ</h3>
-        <div className="flex flex-col gap-[52px]">
+      
+      {/* FAQ Section */}
+      <div className="px-5 md:px-12 lg:px-[84px] bg-black text-white py-12 md:py-16 lg:py-20">
+        <h3 className="mb-8 md:mb-10 lg:mb-[42px] text-xl md:text-2xl lg:text-[24px] font-ezra-medium">
+          FAQ
+        </h3>
+        <div className="flex flex-col gap-8 md:gap-10 lg:gap-[52px]">
           <Divider />
           {faqData.map((data, index) => (
-            <>
-              <FAQ key={index} question={data.question} answer={data.answer} />
+            <div key={index}>
+              <FAQ question={data.question} answer={data.answer} />
               {index !== faqData.length - 1 && <Divider />}
-            </>
+            </div>
           ))}
         </div>
       </div>
+      
       <Footer />
     </MainLayout>
   );

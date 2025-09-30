@@ -10,7 +10,6 @@ import { Link } from "react-router-dom";
 const Header = () => {
   const [isMenuActive, setIsMenuActive] = useState(false);
   const [isBorder, setIsBorder] = useState(false);
-
   const [isScrolled, setIsScrolled] = useState(false);
 
   const toggleMenu = () => {
@@ -45,8 +44,25 @@ const Header = () => {
           isMenuActive
             ? "max-md:justify-end md:justify-between"
             : "justify-between"
-        } items-center px-[48px] max-md:py-[20px] max-md:flex-row-reverse transition-all duration-300`}
+        } items-center px-[48px] max-md:px-[20px] max-md:py-[20px] max-md:flex-row-reverse transition-all duration-300`}
       >
+        {/* Mobile HOST EVENT - Left Side */}
+        <div className="md:hidden z-10">
+          <NavLink
+            to="#"
+            className={`font-neue-regular text-[11px] leading-[14px] tracking-[0.2em] ${
+              isBorder ? "font-bold" : ""
+            }`}
+            onMouseEnter={setBorderActive}
+            onMouseLeave={setBorderInactive}
+          >
+            <Link to="/host-event" style={{ textDecoration: "none", color: "inherit" }}>
+              <Reveal bgColor="transparent">HOST EVENT</Reveal>
+            </Link>
+          </NavLink>
+        </div>
+
+        {/* Menu Button */}
         <button
           className={`outline-none h-[50px] w-fit pl-[5px] z-[70] ${
             isMenuActive
@@ -80,6 +96,8 @@ const Header = () => {
             </div>
           </div>
         </button>
+
+        {/* Logo Section */}
         {isScrolled ? (
           <div className="py-[20px] w-full flex justify-center absolute top-0 left-0">
             <Reveal bgColor="transparent">
@@ -88,18 +106,19 @@ const Header = () => {
           </div>
         ) : (
           <div className="flex flex-col gap-[21px] w-full absolute top-[70px] max-md:top-[15px] max-md:left-[10px] left-0 items-center">
-            <div className="w-[53%] max-md:w-full max-md:h-[60px] flex items-center">
-              <Reveal bgColor="transparent" className="w-full">
-                <NavLink to="/">
+            <div className="w-[53%] max-md:w-auto max-md:h-[60px] flex items-center justify-center">
+              <Reveal bgColor="transparent" className="w-full md:w-full">
+                <NavLink to="/" className="flex justify-center">
+                  {/* Desktop: Full Logo */}
                   <img
-                    className={`w-full object-contain ${
-                      isScrolled
-                        ? "max-h-[80px]"
-                        : "max-h-[100px] max-md:w-[70%]"
-                    } transition-all duration-300`}
+                    className="hidden md:block w-full object-contain max-h-[100px] transition-all duration-300"
                     src={logo}
                     alt=""
                   />
+                  {/* Mobile: Vector Icon Only */}
+                  <div className="md:hidden">
+                    <CrownLogoIcon color="#000" width={46} height={49} />
+                  </div>
                 </NavLink>
               </Reveal>
             </div>
@@ -114,7 +133,9 @@ const Header = () => {
             </div>
           </div>
         )}
-        <div className={`max-md:hidden z-10`}>
+
+        {/* Desktop HOST EVENT - Right Side */}
+        <div className="max-md:hidden z-10">
           <NavLink
             to="#"
             className={`font-neue-regular text-[14px] leading-[14px] tracking-[0.25em] ${
@@ -123,8 +144,8 @@ const Header = () => {
             onMouseEnter={setBorderActive}
             onMouseLeave={setBorderInactive}
           >
-            <Link to="/host-event" style={{ textDecoration: "none" }}>
-                <Reveal bgColor="transparent">HOST EVENT</Reveal>
+            <Link to="/host-event" style={{ textDecoration: "none", color: "inherit" }}>
+              <Reveal bgColor="transparent">HOST EVENT</Reveal>
             </Link>
           </NavLink>
           <div
@@ -141,4 +162,5 @@ const Header = () => {
     </div>
   );
 };
+
 export default Header;

@@ -136,7 +136,7 @@ Please confirm this booking appointment. Thank you! ✨`;
   };
 
   const openSquareBooking = () => {
-    const squareUrl = 'https://app.squareup.com/appointments/book/xeug2c2nw9gjxe/1KY1ADSEMSH8V/start';
+    const squareUrl = 'https://app.squareup.com/appointments/book/xeug2c2nw9gjxe/LDY6NDY9ES2CG/start';
     window.open(squareUrl, '_blank');
   };
 
@@ -571,8 +571,8 @@ Please confirm this booking appointment. Thank you! ✨`;
         <div className="text-center mt-12 text-gray-600">
           <p className="mb-2">Questions about your booking?</p>
           <div className="flex justify-center gap-6 text-sm">
-            {/* <span>📞 Call: +92 307 028 2493</span> */}
-            <span>📧 Email: Lethia@crownandcore.com</span>
+            <span>📞 Call: 425-754-1309</span>
+            <span>📧 Email: info@crownandcore.com</span>
           </div>
         </div>
       </div>

@@ -19,7 +19,6 @@ const mockData = [
       "A non-invasive, regenerative therapy using sound waves to stimulate healing, reduce pain, and repair tissues naturally. We offer StemWave® which uses Cellular Response Technology (CRT+) to stimulate the body's natural healing processes, primarily targeting injured or inflamed tissues, aiming to reduce pain and promote tissue regeneration by enhancing blood flow and decreasing inflammation. This therapy can generate an average of 80-95%+ improvement for complex ",
     price: 150,
   },
-  
   {
     title: "FACIAL REJUVENATION",
     description:
@@ -77,72 +76,68 @@ const mockData = [
   {
     title: "PRP Facial",
     description:
-      "Revitalize your skin with our PRP Facial, a cutting-edge rejuvenation treatment that harnesses the power of your body’s platelet-rich plasma to stimulate collagen production, smooth 15texture, and diminish fine lines. Administered by a licensed and certified nurse practitioner or master aesthetician, this procedure not only enhances your natural radiance but also promotes a youthful, glowing complexion. Experience the power of 15regenerative beauty with a treatment that works in harmony with your body for visibly refreshed skin",
+      "Revitalize your skin with our PRP Facial, a cutting-edge rejuvenation treatment that harnesses the power of your body's platelet-rich plasma to stimulate collagen production, smooth 15texture, and diminish fine lines. Administered by a licensed and certified nurse practitioner or master aesthetician, this procedure not only enhances your natural radiance but also promotes a youthful, glowing complexion. Experience the power of 15regenerative beauty with a treatment that works in harmony with your body for visibly refreshed skin",
     price: 250,
   },
-  ];
-  
-  const Divider = () => {
-    return <div className="h-[1px] bg-white w-[100%] mt-[40px] mb-[40px]" />;
-  };
-  
-  const Product_SPA = () => {
-    return (
-      <div className="bg-black pt-[140px] pl-[90px] pr-[40px] max-md:px-[20px] text-white h-fit">
-        <div className="custom-product-scrollbar h-full pr-[50px] max-md:pr-[0]">
-        <div className="flex flex-col gap-[15px] items-center">
-        <div className="border-b border-solid border-black w-[80px]"></div>
-        <Link to="/book-appointment" style={{ textDecoration: "none" }}>
-        <button className="outline-none rounded-full bg-black bg-opacity-60 hover:bg-opacity-100 hover:text-white transition-all duration-300 ease-linear px-[91px] py-[14px] max-md:px-[70px] max-md:text-[11px] font-neue-regular tracking-[0.25em]">
-        BOOK APPOINTMENT
-        </button>
-        </Link>
-        <div className="border-b border-solid border-black w-[80px]"></div>
-      </div>
-          {mockData.map((item, i) => (
-            <>
-              <div
-                key={i}
-                className="flex justify-between max-md:flex-col max-md:gap-[20px]"
-              >
-                <div className="flex-[1.2]">
-                  <p className="font-ezra-medium text-[14px] tracking-[0.25em]">
-                    {item.title}
-                  </p>
-                </div>
-                <div id="width-issue" className="w-[580px]" >
-                  <p className="font-neue-regular text-[14px] leading-[32px] tracking-[0.1em]">
-                    {item.description}
-                  </p>
-                </div>
-                <div className="flex gap-[32px] items-center flex-[1.2] md:justify-end">
-                  <p className="font-neue-bold text-[14px] tracking-[0.25em]">
-                    ${item.price}
-                  </p>{" "}
-                  <div className="h-[35px] border-l-2 border-white border-solid"></div>{" "}
-                  <button className="outline-none">
-                  </button>
-                </div>
-              </div>
-              {i !== mockData.length - 1 ? (
-                <Divider />
-              ) : (
-                <div className="pb-[40px]"></div>
-              )}
-            </>
-          ))}
+];
+
+const Divider = () => {
+  return <div className="h-[1px] bg-white w-[100%] mt-[40px] mb-[40px]" />;
+};
+
+const Product_SPA = () => {
+  return (
+    <div className="bg-black pt-[80px] md:pt-[140px] px-5 md:pl-[90px] md:pr-[40px] text-white h-fit overflow-hidden">
+      <div className="custom-product-scrollbar h-full pr-0 md:pr-[50px]">
+        <div className="flex flex-col gap-[15px] items-center mb-8 md:mb-0">
+          <div className="border-b border-solid border-black w-[80px]"></div>
+          <Link to="/book-appointment" style={{ textDecoration: "none" }}>
+            <button className="outline-none rounded-full bg-black bg-opacity-60 hover:bg-opacity-100 hover:text-white transition-all duration-300 ease-linear px-[70px] md:px-[91px] py-[14px] text-[11px] md:text-[14px] font-neue-regular tracking-[0.25em]">
+              BOOK APPOINTMENT
+            </button>
+          </Link>
+          <div className="border-b border-solid border-black w-[80px]"></div>
         </div>
-        <div className="flex flex-col gap-[15px] items-center">
+
+        {mockData.map((item, i) => (
+          <div key={i}>
+            <div className="flex flex-col md:flex-row justify-between gap-4 md:gap-8">
+              <div className="flex-shrink-0 md:flex-[1.2]">
+                <p className="font-ezra-medium text-[12px] md:text-[14px] tracking-[0.25em]">
+                  {item.title}
+                </p>
+              </div>
+              <div className="flex-1 md:w-[580px] md:flex-none overflow-hidden">
+                <p className="font-neue-regular text-[12px] md:text-[14px] leading-[28px] md:leading-[32px] tracking-[0.1em] break-words">
+                  {item.description}
+                </p>
+              </div>
+              <div className="flex gap-[32px] items-center md:flex-[1.2] md:justify-end">
+                <p className="font-neue-bold text-[14px] tracking-[0.25em]">
+                  {/* ${item.price} */}
+                </p>
+                <button className="outline-none"></button>
+              </div>
+            </div>
+            {i !== mockData.length - 1 ? (
+              <Divider />
+            ) : (
+              <div className="pb-[40px]"></div>
+            )}
+          </div>
+        ))}
+      </div>
+
+      <div className="flex flex-col gap-[15px] items-center pb-8 md:pb-12">
         <div className="border-b border-solid border-black w-[80px]"></div>
         <Link to="/book-appointment" style={{ textDecoration: "none" }}>
-        <button className="outline-none rounded-full bg-black bg-opacity-60 hover:bg-opacity-100 hover:text-white transition-all duration-300 ease-linear px-[91px] py-[14px] max-md:px-[70px] max-md:text-[11px] font-neue-regular tracking-[0.25em]">
-        BOOK APPOINTMENT
-        </button>
+          <button className="outline-none rounded-full bg-black bg-opacity-60 hover:bg-opacity-100 hover:text-white transition-all duration-300 ease-linear px-[70px] md:px-[91px] py-[14px] text-[11px] md:text-[14px] font-neue-regular tracking-[0.25em]">
+            BOOK APPOINTMENT
+          </button>
         </Link>
         <div className="border-b border-solid border-black w-[80px]"></div>
       </div>
-      </div>
-    );
-  };
-  
-  export default Product_SPA;
+    </div>
+  );
+};
+export default Product_SPA;
